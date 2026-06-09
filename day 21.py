@@ -76,7 +76,25 @@ class driver(person):
     def display_info(self):
          print(f"Name : {self.name} \nAge : {self.age} \nID_NO: {self.id_no} \nGender : {self.gender} \nsalary: {self.salary} \nskills: {self.skills} \nPhone num: {self.phone_num}")    
          
-         
+class staff_assisstance(person):
+    staff_assisstance_count = 0
+    def __init__(self, name, age, id_no, number):
+        super().__init__(name, age, id_no)
+        self.number = number
+        staff_assisstance.staff_assisstance_count += 1
+
+    def display_info(self):
+        print(f"Name: {self.name} \nage: {self.age} \nID: {self.id_no} \nNumber: {self.number}")
+
+class non_teaching_staff(person):
+    non_teaching_staff_count = 0
+    def __init__(self, name, age,id_no, department):
+        super().__init__(name,age, id_no)
+        self.department = department
+        non_teaching_staff.non_teaching_staff_count += 1
+
+    def display_info(self):
+        print("Name: {self.name} \nage: {self.age} \nID: {self.id_no} \nDepartment: {self.department}")         
          
         
 print("\n----- studenr details -----")
@@ -103,6 +121,14 @@ print("\n----- driver details -----")
 d1 = driver("rajesh", 45, "Male", 123, 20000, "driving skills", 1234567890)
 d1.display_info()
 
+print("\n----- staff_assisstance details -----")
+a1 = staff_assisstance("rajesh", 45, 1231, 2487782476)
+a1.display_info()
+
+print("\n----- non_teaching_staff details -----")
+n1 = non_teaching_staff("roja", 45, 1236, "ECE")
+n1.display_info()
+
 
 print("\n----- counts -----")
 print("Total Students:", student.student_count)
@@ -110,7 +136,9 @@ print("Total Faculty:", faculty.faculty_count)
 print("Total helper:", helper.helper_count)
 print("Total watchmen:", watchmen.watchmen_count)
 print("Total driver:", driver.driver_count)
+print("Total staff_assisstance:", staff_assisstance.staff_assisstance_count)
+print("Total non_teaching_staff:", non_teaching_staff.non_teaching_staff_count)
 
 
-   
+ 
     
